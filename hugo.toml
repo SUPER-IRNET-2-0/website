@@ -4,6 +4,7 @@ title = "SUPER IRNET"
 disableKinds = ["taxonomy", "term", "RSS", "sitemap"]
 uglyURLs = true
 relativeURLs = true
+publishDir = "docs"
 
 [markup.goldmark.renderer]
 unsafe = true
