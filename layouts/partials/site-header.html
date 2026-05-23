@@ -1,0 +1,13 @@
+<header class="site-header">
+  <div class="site-header__inner">
+    <a class="brand" href="{{ site.Home.RelPermalink }}">
+      <span class="brand__mark">SUPER-IRNET</span>
+    </a>
+    <nav class="primary-nav" aria-label="Primary navigation">
+      <a href="{{ site.Home.RelPermalink }}">HOME</a>
+      {{ range where site.RegularPages "Params.weight" "le" 80 }}
+        <a href="{{ .RelPermalink }}">{{ .Params.navTitle | default .Title }}</a>
+      {{ end }}
+    </nav>
+  </div>
+</header>
