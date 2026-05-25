@@ -107,6 +107,8 @@ a:hover {
 }
 
 .primary-nav a,
+.nav-dropdown summary,
+.side-dropdown summary,
 .side-nav a {
   border-radius: 8px;
   color: var(--ink);
@@ -115,14 +117,66 @@ a:hover {
   text-decoration: none;
 }
 
-.primary-nav a {
+.primary-nav a,
+.nav-dropdown summary,
+.side-dropdown summary {
   padding: 0.45rem 0.65rem;
 }
 
 .primary-nav a:hover,
+.nav-dropdown summary:hover,
+.nav-dropdown[open] summary,
+.side-dropdown summary:hover,
+.side-dropdown[open] summary,
 .side-nav a:hover {
   background: #e9f3f6;
   color: #00586c;
+}
+
+.nav-dropdown {
+  position: relative;
+}
+
+.nav-dropdown summary {
+  display: block;
+  cursor: pointer;
+  list-style: none;
+}
+
+.nav-dropdown summary::-webkit-details-marker {
+  display: none;
+}
+
+.nav-dropdown summary::after {
+  content: "";
+  display: inline-block;
+  width: 0.42rem;
+  height: 0.42rem;
+  margin-left: 0.45rem;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: translateY(-0.15rem) rotate(45deg);
+}
+
+.nav-dropdown__menu {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 8px);
+  min-width: 190px;
+  padding: 8px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: white;
+  box-shadow: var(--shadow);
+}
+
+.nav-dropdown__menu a {
+  display: block;
+  padding: 0.55rem 0.65rem;
+}
+
+.nav-dropdown:not([open]) .nav-dropdown__menu {
+  display: none;
 }
 
 .hero {
@@ -247,6 +301,11 @@ a:hover {
   overflow-wrap: anywhere;
 }
 
+.table-scroll {
+  width: 100%;
+  overflow-x: auto;
+}
+
 .content-panel th,
 .content-panel td {
   padding: 0.68rem;
@@ -258,6 +317,64 @@ a:hover {
   background: #eef6f8;
   color: #163457;
   text-align: left;
+}
+
+.activities-table {
+  min-width: 920px;
+}
+
+.activities-table th span,
+.publications-table th span,
+.activity-en {
+  display: block;
+  color: var(--muted);
+  font-size: 0.82rem;
+  font-weight: 500;
+  line-height: 1.45;
+}
+
+.activities-table th {
+  white-space: nowrap;
+}
+
+.activities-table td {
+  line-height: 1.45;
+}
+
+.publications-table {
+  min-width: 1180px;
+}
+
+.publications-table th:first-child,
+.publications-table td:first-child {
+  width: 3.6rem;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.publications-table th:nth-child(2),
+.publications-table td:nth-child(2) {
+  width: 28%;
+}
+
+.publications-table th:nth-child(3),
+.publications-table td:nth-child(3) {
+  width: 30%;
+}
+
+.publications-table th:nth-child(4),
+.publications-table td:nth-child(4) {
+  width: 25%;
+}
+
+.publications-table th:nth-child(5),
+.publications-table td:nth-child(5) {
+  width: 7rem;
+  white-space: nowrap;
+}
+
+.publications-table td {
+  line-height: 1.5;
 }
 
 .content-panel ul,
@@ -311,6 +428,31 @@ a:hover {
 .side-nav a {
   display: block;
   padding: 0.48rem 0.55rem;
+}
+
+.side-dropdown summary {
+  display: block;
+  cursor: pointer;
+  list-style: none;
+}
+
+.side-dropdown summary::-webkit-details-marker {
+  display: none;
+}
+
+.side-dropdown summary::after {
+  content: "";
+  display: inline-block;
+  width: 0.42rem;
+  height: 0.42rem;
+  margin-left: 0.45rem;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: translateY(-0.15rem) rotate(45deg);
+}
+
+.side-dropdown div {
+  padding-left: 0.7rem;
 }
 
 .partner-logos {
@@ -398,8 +540,27 @@ a:hover {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .primary-nav a {
+  .primary-nav a,
+  .nav-dropdown summary {
     padding: 0.48rem 0;
+  }
+
+  .nav-dropdown {
+    position: static;
+  }
+
+  .nav-dropdown__menu {
+    position: static;
+    margin-top: 4px;
+    min-width: 0;
+    padding: 4px 0 0;
+    border: 0;
+    box-shadow: none;
+    background: transparent;
+  }
+
+  .nav-dropdown__menu a {
+    padding: 0.35rem 0;
   }
 
   .hero__media img {

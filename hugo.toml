@@ -1,6 +1,6 @@
 baseURL = ""
 locale = "ja"
-title = "SUPER IRNET"
+title = "SUPER-IRNET-2.0"
 disableKinds = ["taxonomy", "term", "RSS", "sitemap"]
 uglyURLs = true
 relativeURLs = true
@@ -10,5 +10,5 @@ publishDir = "docs"
 unsafe = true
 
 [params]
-description = "JSPS Core-to-Core Program SUPER IRNET"
+description = "JSPS Core-to-Core Program SUPER-IRNET-2.0"
 copyright = "National Astronomical Observatory of Japan"

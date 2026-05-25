@@ -2,9 +2,17 @@
   <nav class="side-nav">
     <h2>Contents</h2>
     <a href="{{ site.Home.RelPermalink }}">HOME</a>
-    {{ range where site.RegularPages "Params.weight" "le" 80 }}
+    {{ range where site.RegularPages "Params.weight" "le" 50 }}
       <a href="{{ .RelPermalink }}">{{ .Params.navTitle | default .Title }}</a>
     {{ end }}
+    <details class="side-dropdown">
+      <summary>WORKSHOP</summary>
+      <div>
+        {{ range where (where site.RegularPages "Params.weight" "ge" 60) "Params.weight" "le" 80 }}
+          <a href="{{ .RelPermalink }}">{{ .Params.navTitle | default .Title }}</a>
+        {{ end }}
+      </div>
+    </details>
   </nav>
   <div class="partner-logos">
     <a href="https://subarutelescope.org/"><img src="{{ "images/subaru.jpg" | relURL }}" alt="Subaru Telescope"></a>

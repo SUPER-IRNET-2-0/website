@@ -1,13 +1,21 @@
 <header class="site-header">
   <div class="site-header__inner">
     <a class="brand" href="{{ site.Home.RelPermalink }}">
-      <span class="brand__mark">SUPER-IRNET</span>
+      <span class="brand__mark">SUPER-IRNET-2.0</span>
     </a>
     <nav class="primary-nav" aria-label="Primary navigation">
       <a href="{{ site.Home.RelPermalink }}">HOME</a>
-      {{ range where site.RegularPages "Params.weight" "le" 80 }}
+      {{ range where site.RegularPages "Params.weight" "le" 50 }}
         <a href="{{ .RelPermalink }}">{{ .Params.navTitle | default .Title }}</a>
       {{ end }}
+      <details class="nav-dropdown">
+        <summary>WORKSHOP</summary>
+        <div class="nav-dropdown__menu">
+          {{ range where (where site.RegularPages "Params.weight" "ge" 60) "Params.weight" "le" 80 }}
+            <a href="{{ .RelPermalink }}">{{ .Params.navTitle | default .Title }}</a>
+          {{ end }}
+        </div>
+      </details>
     </nav>
   </div>
 </header>

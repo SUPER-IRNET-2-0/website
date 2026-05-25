@@ -1,6 +1,6 @@
-# SUPER IRNET Hugo Site
+# SUPER-IRNET-2.0 Website
 
-This repository contains a Hugo rebuild of the copied site in `superirnet_mirror`.
+This repository manages the website of SUPER-IRNET-2.0.
 
 ## Local Preview
 
