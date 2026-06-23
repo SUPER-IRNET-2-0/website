@@ -1,0 +1,14 @@
+baseURL = ""
+locale = "ja"
+title = "SUPER-IRNET"
+disableKinds = ["taxonomy", "term", "RSS", "sitemap"]
+uglyURLs = true
+relativeURLs = true
+publishDir = "docs"
+
+[markup.goldmark.renderer]
+unsafe = true
+
+[params]
+description = "JSPS Core-to-Core Program SUPER-IRNET"
+copyright = "National Astronomical Observatory of Japan"
