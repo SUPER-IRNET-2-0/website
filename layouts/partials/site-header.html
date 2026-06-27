@@ -4,19 +4,24 @@
       <span class="brand__mark">SUPER-IRNET-2.0</span>
     </a>
     <nav class="primary-nav" aria-label="Primary navigation">
-      <a href="{{ site.Home.RelPermalink }}">HOME</a>
+      <a href="{{ site.Home.RelPermalink }}">{{ site.Params.navHome }}</a>
       {{ range where site.RegularPages "Params.weight" "le" 50 }}
         <a href="{{ .RelPermalink }}">{{ .Params.navTitle | default .Title }}</a>
       {{ end }}
       <details class="nav-dropdown">
-        <summary>WORKSHOP</summary>
+        <summary>{{ site.Params.navWorkshop }}</summary>
         <div class="nav-dropdown__menu">
           {{ range where (where site.RegularPages "Params.weight" "ge" 60) "Params.weight" "le" 80 }}
             <a href="{{ .RelPermalink }}">{{ .Params.navTitle | default .Title }}</a>
           {{ end }}
         </div>
       </details>
-      <a href="{{ "super-irnet/index.html" | relURL }}">SUPER-IRNET</a>
+      <a href="{{ "super-irnet/index.html" | relURL }}">{{ site.Params.navLegacy }}</a>
+      <div class="language-switch" aria-label="Language switcher">
+        {{ range .AllTranslations }}
+          <a class="{{ if eq .Language.Lang site.Language.Lang }}is-active{{ end }}" href="{{ .RelPermalink }}" hreflang="{{ .Language.Locale }}">{{ .Language.Label }}</a>
+        {{ end }}
+      </div>
     </nav>
   </div>
 </header>

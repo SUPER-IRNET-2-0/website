@@ -1,14 +1,48 @@
 baseURL = ""
-locale = "ja"
 title = "SUPER-IRNET-2.0"
 disableKinds = ["taxonomy", "term", "RSS", "sitemap"]
+disableAliases = true
 uglyURLs = true
 relativeURLs = true
 publishDir = "docs"
+defaultContentLanguage = "ja"
+defaultContentLanguageInSubdir = false
+disableDefaultLanguageRedirect = true
 
 [markup.goldmark.renderer]
 unsafe = true
 
-[params]
-description = "JSPS Core-to-Core Program SUPER-IRNET-2.0"
-copyright = "National Astronomical Observatory of Japan"
+[languages]
+  [languages.ja]
+    locale = "ja"
+    label = "日本語"
+    title = "SUPER-IRNET-2.0"
+    weight = 1
+    [languages.ja.params]
+      description = "日本学術振興会・研究拠点形成事業 SUPER-IRNET-2.0"
+      copyright = "National Astronomical Observatory of Japan"
+      navHome = "ホーム"
+      navWorkshop = "ワークショップ"
+      navLegacy = "SUPER-IRNET"
+      sidebarTitle = "目次"
+      skipLink = "本文へ移動"
+      backHome = "ホームへ戻る"
+      heroEyebrow = "日本学術振興会・研究拠点形成事業"
+      heroDescription = "地上・宇宙望遠鏡の連携による近赤外線広視野深宇宙探査時代の国際研究拠点形成"
+
+  [languages.en]
+    locale = "en"
+    label = "English"
+    title = "SUPER-IRNET-2.0"
+    weight = 2
+    [languages.en.params]
+      description = "JSPS Core-to-Core Program SUPER-IRNET-2.0"
+      copyright = "National Astronomical Observatory of Japan"
+      navHome = "HOME"
+      navWorkshop = "WORKSHOP"
+      navLegacy = "SUPER-IRNET"
+      sidebarTitle = "Contents"
+      skipLink = "Skip to content"
+      backHome = "Back to home"
+      heroEyebrow = "JSPS Core-to-Core Program"
+      heroDescription = "International research network toward the era of deep and wide near-infrared survey of the universe."

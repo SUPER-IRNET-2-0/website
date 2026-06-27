@@ -3,8 +3,8 @@
     <img src="{{ .Params.hero | default "images/superirnet.png" | relURL }}" alt="">
   </div>
   <div class="hero__copy">
-    <p class="eyebrow">JSPS Core-to-Core Program</p>
+    <p class="eyebrow">{{ site.Params.heroEyebrow }}</p>
     <h1>{{ .Params.headline | default .Title }}</h1>
-    <p>International research network toward the era of deep and wide near-infrared survey of the universe.</p>
+    <p>{{ site.Params.heroDescription }}</p>
   </div>
 </section>

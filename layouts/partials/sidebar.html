@@ -1,12 +1,12 @@
 <aside class="sidebar" aria-label="Related links">
   <nav class="side-nav">
-    <h2>Contents</h2>
-    <a href="{{ site.Home.RelPermalink }}">HOME</a>
+    <h2>{{ site.Params.sidebarTitle }}</h2>
+    <a href="{{ site.Home.RelPermalink }}">{{ site.Params.navHome }}</a>
     {{ range where site.RegularPages "Params.weight" "le" 50 }}
       <a href="{{ .RelPermalink }}">{{ .Params.navTitle | default .Title }}</a>
     {{ end }}
     <details class="side-dropdown">
-      <summary>WORKSHOP</summary>
+      <summary>{{ site.Params.navWorkshop }}</summary>
       <div>
         {{ range where (where site.RegularPages "Params.weight" "ge" 60) "Params.weight" "le" 80 }}
           <a href="{{ .RelPermalink }}">{{ .Params.navTitle | default .Title }}</a>

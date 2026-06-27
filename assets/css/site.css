@@ -179,6 +179,27 @@ a:hover {
   display: none;
 }
 
+.language-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  padding: 2px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #f7fbf8;
+}
+
+.language-switch a {
+  padding: 0.35rem 0.55rem;
+  border-radius: 6px;
+  font-size: 0.8rem;
+}
+
+.language-switch a.is-active {
+  background: var(--accent);
+  color: white;
+}
+
 .hero {
   width: min(1180px, calc(100% - 32px));
   margin: 30px auto 24px;
@@ -331,6 +352,32 @@ a:hover {
   font-size: 0.82rem;
   font-weight: 500;
   line-height: 1.45;
+}
+
+html[lang="ja"] .activity-en,
+html[lang="ja"] .activities-table th span,
+html[lang="ja"] .publications-table th span {
+  display: none;
+}
+
+html[lang="en"] .activities-table td:has(.activity-en),
+html[lang="en"] .activities-table th:has(span),
+html[lang="en"] .publications-table th:has(span) {
+  font-size: 0;
+}
+
+html[lang="en"] .activities-table td:has(.activity-en) .activity-en,
+html[lang="en"] .activities-table th:has(span) span,
+html[lang="en"] .publications-table th:has(span) span {
+  display: block;
+  font-size: 0.88rem;
+}
+
+html[lang="en"] .publications-table th:has(span) span {
+  color: inherit;
+  font-size: 1rem;
+  font-weight: inherit;
+  line-height: inherit;
 }
 
 .activities-table th {
@@ -543,6 +590,10 @@ a:hover {
   .primary-nav a,
   .nav-dropdown summary {
     padding: 0.48rem 0;
+  }
+
+  .language-switch {
+    width: fit-content;
   }
 
   .nav-dropdown {
