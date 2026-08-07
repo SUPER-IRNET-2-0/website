@@ -9,6 +9,9 @@ defaultContentLanguage = "ja"
 defaultContentLanguageInSubdir = false
 disableDefaultLanguageRedirect = true
 
+[security]
+allowContent = ["^text/html$"]
+
 [markup.goldmark.renderer]
 unsafe = true
 
@@ -20,7 +23,7 @@ unsafe = true
     weight = 1
     [languages.ja.params]
       description = "日本学術振興会・研究拠点形成事業 SUPER-IRNET-2.0"
-      copyright = "National Astronomical Observatory of Japan"
+      copyright = "宇宙航空研究開発機構（JAXA）"
       navHome = "ホーム"
       navWorkshop = "ワークショップ"
       navLegacy = "SUPER-IRNET"
@@ -28,7 +31,7 @@ unsafe = true
       skipLink = "本文へ移動"
       backHome = "ホームへ戻る"
       heroEyebrow = "日本学術振興会・研究拠点形成事業"
-      heroDescription = "地上・宇宙望遠鏡の連携による近赤外線広視野深宇宙探査時代の国際研究拠点形成"
+      heroDescription = "五大陸横断で挑む、近赤外線による最深宇宙探査"
 
   [languages.en]
     locale = "en"
@@ -37,7 +40,7 @@ unsafe = true
     weight = 2
     [languages.en.params]
       description = "JSPS Core-to-Core Program SUPER-IRNET-2.0"
-      copyright = "National Astronomical Observatory of Japan"
+      copyright = "Japan Aerospace Exploration Agency (JAXA)"
       navHome = "HOME"
       navWorkshop = "WORKSHOP"
       navLegacy = "SUPER-IRNET"
@@ -45,4 +48,4 @@ unsafe = true
       skipLink = "Skip to content"
       backHome = "Back to home"
       heroEyebrow = "JSPS Core-to-Core Program"
-      heroDescription = "International research network toward the era of deep and wide near-infrared survey of the universe."
+      heroDescription = "A five-continent network exploring the deepest universe in the near-infrared."
