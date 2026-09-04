@@ -1,4 +1,4 @@
-<section class="hero">
+<section class="hero{{ if eq .Section "workshop" }} hero--workshop{{ end }}">
   <div class="hero__media">
     <img src="{{ .Params.hero | default "images/superirnet.png" | relURL }}" alt="">
   </div>
